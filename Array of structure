@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string name;
+    int roll;
+    float marks;
+};
+
+int main() {
+    // Declaring an array of 3 Student structures
+    Student students[3];
+
+    // Storing information
+    for(int i = 0; i < 3; i++) {
+        cout << "Enter name for student " << i+1 << ": ";
+        cin >> students[i].name;
+        cout << "Enter roll number: ";
+        cin >> students[i].roll;
+        cout << "Enter marks: ";
+        cin >> students[i].marks;
+    }
+
+    // Displaying information
+    for(int i = 0; i < 3; i++) {
+        cout << "Student " << i+1 << ": " << students[i].name 
+             << " (Roll: " << students[i].roll << ", Marks: " << students[i].marks << ")" << endl;
+    }
+    return 0;
+}
