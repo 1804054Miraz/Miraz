@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+void addTen(int x) { // x is a copy of num
+    x = x + 10;
+    cout << "Inside function: x = " << x << endl;
+}
+
+int main() {
+    int num = 5;
+    addTen(num); // pass by value
+    cout << "In main: num = " << num << endl; // num remains unchanged
+    return 0;
+}
+
+Output:
+Inside function: x = 15
+In main: num = 5
+
+
+#include <iostream>
+using namespace std;
+
+void addTen(int &x) { // &x means reference
+    x = x + 10;
+    cout << "Inside function: x = " << x << endl;
+}
+
+int main() {
+    int num = 5;
+    addTen(num); // pass by reference
+    cout << "In main: num = " << num << endl; // num is changed
+    return 0;
+}
+Output:
+Inside function: x = 15
+In main: num = 15
