@@ -29,3 +29,21 @@ int main() {
     }
     return 0;
 }
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Course {
+    string courseName;
+    int marks[5]; // Array inside the structure
+};
+
+int main() {
+    Course math;
+    math.courseName = "Algebra";
+    math.marks[0] = 85; // Accessing the internal array
+    math.marks[1] = 90;
+    return 0;
+}
+
