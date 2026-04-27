@@ -1,0 +1,22 @@
+BFS(G, s)
+    // G = Graph, s = starting vertex
+
+    for each vertex v in G:
+        visited[v] ← FALSE
+
+    create an empty queue Q
+
+    visited[s] ← TRUE
+    enqueue(Q, s)
+
+    while Q is not empty:
+        u ← dequeue(Q)
+        print u
+
+        for each neighbor v of u:
+            if visited[v] = FALSE:
+                visited[v] ← TRUE
+                enqueue(Q, v)
+for each vertex v in G:
+    if visited[v] = FALSE:
+        BFS(G, v)
