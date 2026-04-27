@@ -1,0 +1,16 @@
+KRUSKAL(G)
+    // G = Graph with vertices V and edges E
+
+    MST ← empty set
+
+    sort all edges of G in increasing order of weight
+
+    for each vertex v in G:
+        MAKE-SET(v)     // create separate sets
+
+    for each edge (u, v) in sorted edges:
+        if FIND-SET(u) ≠ FIND-SET(v):
+            add edge (u, v) to MST
+            UNION(u, v)
+
+    return MST
