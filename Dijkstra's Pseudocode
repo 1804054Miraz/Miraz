@@ -1,0 +1,24 @@
+DIJKSTRA(G, source)
+    // G = Graph with vertices V and edges E
+    // source = starting vertex
+
+    for each vertex v in G:
+        dist[v] ← ∞
+        parent[v] ← NULL
+
+    dist[source] ← 0
+
+    create a priority queue Q
+    insert all vertices into Q with their dist values
+
+    while Q is not empty:
+        u ← vertex in Q with minimum dist[u]
+        remove u from Q
+
+        for each neighbor v of u:
+            if dist[u] + weight(u, v) < dist[v]:
+                dist[v] ← dist[u] + weight(u, v)
+                parent[v] ← u
+                update priority of v in Q
+
+    return dist[], parent[]
