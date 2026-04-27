@@ -1,0 +1,12 @@
+DFS(G, u)
+    // G = Graph, u = starting vertex
+
+    mark u as visited
+    print u
+
+    for each vertex v adjacent to u:
+        if v is not visited:
+            DFS(G, v)
+for each vertex v in G:
+    if v is not visited:
+        DFS(G, v)
