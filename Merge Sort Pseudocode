@@ -1,0 +1,37 @@
+MERGE-SORT(A, left, right)
+    if left < right:
+        mid ← (left + right) / 2
+
+        MERGE-SORT(A, left, mid)
+        MERGE-SORT(A, mid + 1, right)
+
+        MERGE(A, left, mid, right)
+
+
+MERGE(A, left, mid, right)
+    create two arrays:
+        L ← A[left ... mid]
+        R ← A[mid+1 ... right]
+
+    i ← 0, j ← 0, k ← left
+
+    while i < length(L) AND j < length(R):
+        if L[i] ≤ R[j]:
+            A[k] ← L[i]
+            i ← i + 1
+        else:
+            A[k] ← R[j]
+            j ← j + 1
+        k ← k + 1
+
+    // copy remaining elements
+    while i < length(L):
+        A[k] ← L[i]
+        i ← i + 1
+        k ← k + 1
+
+    while j < length(R):
+        A[k] ← R[j]
+        j ← j + 1
+        k ← k + 1
+
