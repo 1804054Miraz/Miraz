@@ -1,0 +1,32 @@
+PRIM(G, start)
+    // G = Graph with vertices V and edges E
+    // start = starting vertex
+
+    for each vertex v in G:
+        key[v] ← ∞
+        parent[v] ← NIL
+        visited[v] ← FALSE
+
+    key[start] ← 0
+
+    create a priority queue Q
+    insert all vertices into Q with key values
+
+    while Q is not empty:
+        u ← vertex in Q with minimum key[u]
+        remove u from Q
+        visited[u] ← TRUE
+
+        for each neighbor v of u:
+            if visited[v] = FALSE AND weight(u, v) < key[v]:
+                key[v] ← weight(u, v)
+                parent[v] ← u
+                update priority of v in Q
+
+    return parent[]   // forms the Minimum Spanning Tree
+
+// key[v] = minimum edge weight to connect v to MST
+// Start from any vertex
+// Always pick minimum key vertex
+// Use greedy approach
+// Builds a Minimum Spanning Tree (MST)
